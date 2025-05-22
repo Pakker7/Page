@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이들의 인생 13 - 멤버 대시보드</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #e0f7fa, #b2ebf2);
+            font-family: 'Arial', sans-serif;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            color: #444;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: white;
+        }
+        .button-item {
+            background-color: #a5b4fc;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 4px 0;
+            display: inline-block;
+            font-size: 14px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 400px; /* 고정된 카드 높이 */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .content {
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-8">
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-center mb-8 text-gray-800 flex items-center justify-center">
+            <span class="mr-2">🎯</span>
+            이들의 인생 13 - 멤버 대시보드
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Column 1 -->
+            <div>
+                <!-- 사과 93 서울 💚 -->
+                <div class="card">
+                    <div class="section-title">
+                        <span class="icon bg-red-400">🍎</span>
+                        <span>사과 93 서울 💚</span>
+                    </div>
+                    <div class="content">
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">🌱</span>
+                                <span>취미 관심사</span>
+                            </div>
+                            <div class="button-item">사주</div>
+                            <div class="button-item">운동</div>
+                            <div class="button-item">낮술</div>
+                            <div class="button-item">테슬라 자율주행</div>
+                            <div class="button-item">제주도 여행</div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">🎯</span>
+                                <span>성격</span>
+                            </div>
+                            <p class="text-sm text-gray-600">호기심 많고 유머러스, 꾸준히 노력하는 성격</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">🌟</span>
+                                <span>한 단어로 표현</span>
+                            </div>
+                            <p class="text-sm text-gray-600">호기심</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-purple-400">😊</span>
+                                <span>감정 표현 성향</span>
+                            </div>
+                            <p class="text-sm text-gray-600">감성 터지는 탐험가</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">⏰</span>
+                                <span>활동 시간대</span>
+                            </div>
+                            <p class="text-sm text-gray-600">출근 직후 핵폭주러 (오전 8시~오후 12시, 저녁 7시)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">📏</span>
+                                <span>문장 길이</span>
+                            </div>
+                            <p class="text-sm text-gray-600">짧고 툭툭 미니멀 대화파 (평균 15자)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">💬</span>
+                                <span>칭찬 & 격려 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">소소한 모티베이터 ("대박" 3회)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-blue-400">🚀</span>
+                                <span>토론 & 비평 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">의견 제안자</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-pink-400">🎨</span>
+                                <span>취미 가이드</span>
+                            </div>
+                            <p class="text-sm text-gray-600">리더십과 전략적 사고를 활용해 자율주행 기술 세미나나 사주 기반 힐링 워크숍 참여 추천</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 나무 92 서울 💚 -->
+                <div class="card">
+                    <div class="section-title">
+                        <span class="icon bg-red-400">🌳</span>
+                        <span>나무 92 서울 💚</span>
+                    </div>
+                    <div class="content">
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">🌱</span>
+                                <span>취미 관심사</span>
+                            </div>
+                            <div class="button-item">요리</div>
+                            <div class="button-item">공부(자격증)</div>
+                            <div class="button-item">투자</div>
+                            <div class="button-item">로또</div>
+                            <div class="button-item">술</div>
+                            <div class="button-item">걷기</div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">🎯</span>
+                                <span>성격</span>
+                            </div>
+                            <p class="text-sm text-gray-600">계획적이고 책임감 강함, 유머러스</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">🌟</span>
+                                <span>한 단어로 표현</span>
+                            </div>
+                            <p class="text-sm text-gray-600">계획</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-purple-400">😊</span>
+                                <span>감정 표현 성향</span>
+                            </div>
+                            <p class="text-sm text-gray-600">감정 폭발하는 플래너</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">⏰</span>
+                                <span>활동 시간대</span>
+                            </div>
+                            <p class="text-sm text-gray-600">아침형 플래너 (오전 7시~오후 9시)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">📏</span>
+                                <span>문장 길이</span>
+                            </div>
+                            <p class="text-sm text-gray-600">중간 길이의 서사형 해설러 (평균 20자)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">💬</span>
+                                <span>칭찬 & 격려 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">팀의 따뜻이 담당 ("대박" 3회)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-blue-400">🚀</span>
+                                <span>토론 & 비평 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">논리적 비판가</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-pink-400">🎨</span>
+                                <span>취미 가이드</span>
+                            </div>
+                            <p class="text-sm text-gray-600">전략적 사고를 활용해 칵테일 제조 워크숍이나 요리 자격증 취득 추천</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 지구 88 서울 -->
+                <div class="card">
+                    <div class="section-title">
+                        <span class="icon bg-green-400">🌍</span>
+                        <span>지구 88 서울</span>
+                    </div>
+                    <div class="content">
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">🌱</span>
+                                <span>취미 관심사</span>
+                            </div>
+                            <div class="button-item">술(베일리)</div>
+                            <div class="button-item">예거 자몽</div>
+                            <div class="button-item">칵테일</div>
+                            <div class="button-item">격려</div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">🎯</span>
+                                <span>성격</span>
+                            </div>
+                            <p class="text-sm text-gray-600">따뜻하고 사교적, 친구 챙김</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">🌟</span>
+                                <span>한 단어로 표현</span>
+                            </div>
+                            <p class="text-sm text-gray-600">따뜻</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-purple-400">😊</span>
+                                <span>감정 표현 성향</span>
+                            </div>
+                            <p class="text-sm text-gray-600">따뜻이</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">⏰</span>
+                                <span>활동 시간대</span>
+                            </div>
+                            <p class="text-sm text-gray-600">저녁형 따뜻이 (오후 4시~저녁 9시)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">📏</span>
+                                <span>문장 길이</span>
+                            </div>
+                            <p class="text-sm text-gray-600">중간 길이의 서사형 해설러 (평균 16자)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">💬</span>
+                                <span>칭찬 & 격려 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">팀의 모티베이터 ("멋지다" 3회)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-blue-400">🚀</span>
+                                <span>토론 & 비평 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">서포터형</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-pink-400">🎨</span>
+                                <span>취미 가이드</span>
+                            </div>
+                            <p class="text-sm text-gray-600">공감 능력을 살려 바텐더 체험 클래스나 팀 빌딩 워크숍 추천</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div>
+                <!-- 콩 95 서울 -->
+                <div class="card">
+                    <div class="section-title">
+                        <span class="icon bg-green-400">🌰</span>
+                        <span>콩 95 서울</span>
+                    </div>
+                    <div class="content">
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">🌱</span>
+                                <span>취미 관심사</span>
+                            </div>
+                            <div class="button-item">등산</div>
+                            <div class="button-item">테니스</div>
+                            <div class="button-item">러닝</div>
+                            <div class="button-item">술(아사히)</div>
+                            <div class="button-item">로또</div>
+                            <div class="button-item">투자</div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">🎯</span>
+                                <span>성격</span>
+                            </div>
+                            <p class="text-sm text-gray-600">활동적이고 사교적, 낙천적</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">🌟</span>
+                                <span>한 단어로 표현</span>
+                            </div>
+                            <p class="text-sm text-gray-600">활동</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-purple-400">😊</span>
+                                <span>감정 표현 성향</span>
+                            </div>
+                            <p class="text-sm text-gray-600">활동가</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">⏰</span>
+                                <span>활동 시간대</span>
+                            </div>
+                            <p class="text-sm text-gray-600">아침형 활동가 (오전 8시~오후 1시)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">📏</span>
+                                <span>문장 길이</span>
+                            </div>
+                            <p class="text-sm text-gray-600">짧고 툭툭 미니멀 대화파 (평균 14자)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">💬</span>
+                                <span>칭찬 & 격려 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">소소한 격려자 ("좋당" 1회)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-blue-400">🚀</span>
+                                <span>토론 & 비평 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">논리적 비판가</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-pink-400">🎨</span>
+                                <span>취미 가이드</span>
+                            </div>
+                            <p class="text-sm text-gray-600">분석적 사고를 살려 아웃도어 스포츠 동호회나 트레일 러닝 이벤트 추천</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 자르 99 서울 ☃️ -->
+                <div class="card">
+                    <div class="section-title">
+                        <span class="icon bg-red-400">✂️</span>
+                        <span>자르 99 서울 ☃️</span>
+                    </div>
+                    <div class="content">
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">🌱</span>
+                                <span>취미 관심사</span>
+                            </div>
+                            <div class="button-item">제주도 여행</div>
+                            <div class="button-item">술(코젤)</div>
+                            <div class="button-item">로또</div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">🎯</span>
+                                <span>성격</span>
+                            </div>
+                            <p class="text-sm text-gray-600">낙천적이고 사교적, 솔직함</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">🌟</span>
+                                <span>한 단어로 표현</span>
+                            </div>
+                            <p class="text-sm text-gray-600">낙천</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-purple-400">😊</span>
+                                <span>감정 표현 성향</span>
+                            </div>
+                            <p class="text-sm text-gray-600">낙천주의자</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">⏰</span>
+                                <span>활동 시간대</span>
+                            </div>
+                            <p class="text-sm text-gray-600">점심시간 활발러 (오전 9시~오후 2시)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">📏</span>
+                                <span>문장 길이</span>
+                            </div>
+                            <p class="text-sm text-gray-600">짧고 툭툭 미니멀 대화파 (평균 12자)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">💬</span>
+                                <span>칭찬 & 격려 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">소소한 모티베이터 ("감사합니다" 2회)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-blue-400">🚀</span>
+                                <span>토론 & 비평 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">의견 제안자</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-pink-400">🎨</span>
+                                <span>취미 가이드</span>
+                            </div>
+                            <p class="text-sm text-gray-600">창의적 에너지를 살려 제주도 로컬 술 투어나 홈 칵테일 클래스 추천</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 호호 97 서울 ☃️ -->
+                <div class="card">
+                    <div class="section-title">
+                        <span class="icon bg-red-400">😄</span>
+                        <span>호호 97 서울 ☃️</span>
+                    </div>
+                    <div class="content">
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">🌱</span>
+                                <span>취미 관심사</span>
+                            </div>
+                            <div class="button-item">술(깔루아밀크)</div>
+                            <div class="button-item">요리 로봇</div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">🎯</span>
+                                <span>성격</span>
+                            </div>
+                            <p class="text-sm text-gray-600">호기심 많고 사교적</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">🌟</span>
+                                <span>한 단어로 표현</span>
+                            </div>
+                            <p class="text-sm text-gray-600">사교</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-purple-400">😊</span>
+                                <span>감정 표현 성향</span>
+                            </div>
+                            <p class="text-sm text-gray-600">웃음 짓는 사교가</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">⏰</span>
+                                <span>활동 시간대</span>
+                            </div>
+                            <p class="text-sm text-gray-600">늦은 아침 활동가 (오전 10시~오후 3시)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">📏</span>
+                                <span>문장 길이</span>
+                            </div>
+                            <p class="text-sm text-gray-600">짧고 툭툭 미니멀 대화파 (평균 10자)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">💬</span>
+                                <span>칭찬 & 격려 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">소소한 모티베이터 ("축하드려여" 1회)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-blue-400">🚀</span>
+                                <span>토론 & 비평 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">서포터형</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-pink-400">🎨</span>
+                                <span>취미 가이드</span>
+                            </div>
+                            <p class="text-sm text-gray-600">호기심을 살려 디저트 칵테일 클래스나 스마트 키친 테크 체험 추천</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3 -->
+            <div>
+                <!-- 뉴니 86 경기 -->
+                <div class="card">
+                    <div class="section-title">
+                        <span class="icon bg-purple-400">🐾</span>
+                        <span>뉴니 86 경기</span>
+                    </div>
+                    <div class="content">
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">🌱</span>
+                                <span>취미 관심사</span>
+                            </div>
+                            <div class="button-item">야근</div>
+                            <div class="button-item">격려</div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">🎯</span>
+                                <span>성격</span>
+                            </div>
+                            <p class="text-sm text-gray-600">긍정적이고 성실함</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">🌟</span>
+                                <span>한 단어로 표현</span>
+                            </div>
+                            <p class="text-sm text-gray-600">긍정</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-purple-400">😊</span>
+                                <span>감정 표현 성향</span>
+                            </div>
+                            <p class="text-sm text-gray-600">긍정 넘치는 야근러</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">⏰</span>
+                                <span>활동 시간대</span>
+                            </div>
+                            <p class="text-sm text-gray-600">저녁형 긍정러 (오후 4시~10시)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">📏</span>
+                                <span>문장 길이</span>
+                            </div>
+                            <p class="text-sm text-gray-600">짧고 툭툭 미니멀 대화파 (평균 14자)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">💬</span>
+                                <span>칭찬 & 격려 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">소소한 격려자 ("멋지다" 1회)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-blue-400">🚀</span>
+                                <span>토론 & 비평 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">서포터형</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-pink-400">🎨</span>
+                                <span>취미 가이드</span>
+                            </div>
+                            <p class="text-sm text-gray-600">긍정성을 살려 스트레스 해소 요가 클래스 추천?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 화 93 충남 💙 -->
+                <div class="card">
+                    <div class="section-title">
+                        <span class="icon bg-purple-400">🔥</span>
+                        <span>화 93 충남 💙</span>
+                    </div>
+                    <div class="content">
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">🌱</span>
+                                <span>취미 관심사</span>
+                            </div>
+                            <div class="button-item">막걸리(알밤막걸리)</div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">🎯</span>
+                                <span>성격</span>
+                            </div>
+                            <p class="text-sm text-gray-600">조용하고 소소한 취미 즐김</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">🌟</span>
+                                <span>한 단어로 표현</span>
+                            </div>
+                            <p class="text-sm text-gray-600">소소</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-purple-400">😊</span>
+                                <span>감정 표현 성향</span>
+                            </div>
+                            <p class="text-sm text-gray-600">이모지로 소소함 표현</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">⏰</span>
+                                <span>활동 시간대</span>
+                            </div>
+                            <p class="text-sm text-gray-600">점심시간 소소러 (오후 1시)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">📏</span>
+                                <span>문장 길이</span>
+                            </div>
+                            <p class="text-sm text-gray-600">짧고 툭툭 미니멀 대화파 (평균 8자)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">💬</span>
+                                <span>칭찬 & 격려 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">묵묵한 서포터</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-blue-400">🚀</span>
+                                <span>토론 & 비평 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">서포터형</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-pink-400">🎨</span>
+                                <span>취미 가이드</span>
+                            </div>
+                            <p class="text-sm text-gray-600">열정을 살려 전통주 시음회 추천</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 대부엉 98 서울 -->
+                <div class="card">
+                    <div class="section-title">
+                        <span class="icon bg-green-400">🦉</span>
+                        <span>대부엉 98 서울</span>
+                    </div>
+                    <div class="content">
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">🌱</span>
+                                <span>취미 관심사</span>
+                            </div>
+                            <div class="button-item">야근</div>
+                            <div class="button-item">논문</div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">🎯</span>
+                                <span>성격</span>
+                            </div>
+                            <p class="text-sm text-gray-600">성실하고 책임감 있음, 창의적</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">🌟</span>
+                                <span>한 단어로 표현</span>
+                            </div>
+                            <p class="text-sm text-gray-600">성실</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-purple-400">😊</span>
+                                <span>감정 표현 성향</span>
+                            </div>
+                            <p class="text-sm text-gray-600">소소한 감정 표현의 성실가</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">⏰</span>
+                                <span>활동 시간대</span>
+                            </div>
+                            <p class="text-sm text-gray-600">야행성 성실가 (오후 10시~11시)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">📏</span>
+                                <span>문장 길이</span>
+                            </div>
+                            <p class="text-sm text-gray-600">짧고 툭툭 미니멀 대화파 (평균 15자)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">💬</span>
+                                <span>칭찬 & 격려 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">묵묵한 서포터</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-blue-400">🚀</span>
+                                <span>토론 & 비평 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">서포터형</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-pink-400">🎨</span>
+                                <span>취미 가이드</span>
+                            </div>
+                            <p class="text-sm text-gray-600">전략적 사고와 문제 해결 능력을 키우며 스트레스를 해소할 수 있는 체스나 수학 퍼즐</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 4 -->
+            <div>
+                <!-- 도고 94 인천 🥕 -->
+                <div class="card">
+                    <div class="section-title">
+                        <span class="icon bg-purple-400">🐶</span>
+                        <span>도고 94 인천 🥕</span>
+                    </div>
+                    <div class="content">
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">🌱</span>
+                                <span>취미 관심사</span>
+                            </div>
+                            <div class="button-item">술(사과맛 음료)</div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">🎯</span>
+                                <span>성격</span>
+                            </div>
+                            <p class="text-sm text-gray-600">단순하고 귀여움</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">🌟</span>
+                                <span>한 단어로 표현</span>
+                            </div>
+                            <p class="text-sm text-gray-600">단순</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-purple-400">😊</span>
+                                <span>감정 표현 성향</span>
+                            </div>
+                            <p class="text-sm text-gray-600">감정 표현 절제된 단순러</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">⏰</span>
+                                <span>활동 시간대</span>
+                            </div>
+                            <p class="text-sm text-gray-600">늦은 저녁 한마디러 (오후 9시)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">📏</span>
+                                <span>문장 길이</span>
+                            </div>
+                            <p class="text-sm text-gray-600">짧고 툭툭 미니멀 대화파 (평균 10자)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">💬</span>
+                                <span>칭찬 & 격려 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">묵묵한 서포터</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-blue-400">🚀</span>
+                                <span>토론 & 비평 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">서포터형</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-pink-400">🎨</span>
+                                <span>취미 가이드</span>
+                            </div>
+                            <p class="text-sm text-gray-600">단순함을 살려 과일 디저트 만들기 클래스 추천?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 솔 96 경남 💙 -->
+                <div class="card">
+                    <div class="section-title">
+                        <span class="icon bg-green-400">🌲</span>
+                        <span>솔 96 경남 💙</span>
+                    </div>
+                    <div class="content">
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">🌱</span>
+                                <span>취미 관심사</span>
+                            </div>
+                            <div class="button-item">술(베일리)</div>
+                            <div class="button-item">깔루아밀크</div>
+                            <div class="button-item">덕몽어스</div>
+                            <div class="button-item">요리 로봇</div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">🎯</span>
+                                <span>성격</span>
+                            </div>
+                            <p class="text-sm text-gray-600">재치 있고 사교적</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">🌟</span>
+                                <span>한 단어로 표현</span>
+                            </div>
+                            <p class="text-sm text-gray-600">재치</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-purple-400">😊</span>
+                                <span>감정 표현 성향</span>
+                            </div>
+                            <p class="text-sm text-gray-600">이모지와 재치 발산</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-orange-400">⏰</span>
+                                <span>활동 시간대</span>
+                            </div>
+                            <p class="text-sm text-gray-600">오후 활동러 (오후 1시~저녁 6시)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-yellow-400">📏</span>
+                                <span>문장 길이</span>
+                            </div>
+                            <p class="text-sm text-gray-600">중간 길이의 서사형 해설러 (평균 18자)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-green-400">💬</span>
+                                <span>칭찬 & 격려 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">소소한 격려자 ("좋은하루 되세요" 1회)</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-blue-400">🚀</span>
+                                <span>토론 & 비평 추천</span>
+                            </div>
+                            <p class="text-sm text-gray-600">서포터형</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="section-title">
+                                <span class="icon bg-pink-400">🎨</span>
+                                <span>취미 가이드</span>
+                            </div>
+                            <p class="text-sm text-gray-600">재치와 열정을 살려 온라인 보드게임 모임이나 칵테일 파티 추천?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
